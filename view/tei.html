@@ -1,0 +1,91 @@
+
+
+
+<div class="wrap">
+
+  <h2>tes</h2>
+  <p>テーマ用の設定項目</p>
+  <form method="post" action="http://localhost/newwp/wp-admin/options-general.php?page=ht">
+	<input type="text" value="{{op2}}" name="t">
+	<input type="hidden" name="test" value="{{nonce}}">
+
+	<input type="hidden" name="action" value="editpost">
+	<input type="hidden" name="kk" value="1">
+	<input type="hidden" id="post_ID" name="post_ID" value="45">
+	<input type="hidden" name="_wp_http_referer" value="/newwp/wp-admin/post.php?post=45&amp;action=edit&amp;message=1">
+	<input type="hidden" id="_wpnonce" name="_wpnonce" value="5a3561b38e">
+	<input type="text" value="{{nono}}" name="nono">
+<p id="se">aaaaaaaaaaa</p>
+	<ul>
+		{% for param,val in op %}
+		<li><input type="checkbox" name="{{param}}">{{val}}</li>
+		{% endfor %}
+	</ul>
+
+
+	<div id="y" contenteditable="true">lfnsgklfmkdlgk</div>
+
+	<textarea name="" id="fg" cols="30" rows="10" onselect="ii()"></textarea>
+
+
+	<table id="gn">
+		<tr>
+			<th></th>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td></td>
+		</tr>
+	</table>
+
+	<select name="article" id="">
+	{% for post in posts %}
+		<option value="{{post.ID}}" {% if post.ID == 5 %}selected{% endif %}>{{post.post_title}}</option>
+	{% endfor %}
+	</select>
+	<button type="submit">送信</button>
+  </form>
+
+
+<script type="text/javascript">
+var win = window
+	selected_str = '',
+    doc = document; //グローバルオブジェクトをキャッシュ
+ 
+
+
+	function lll(e) {
+		console.log(e);
+	}
+
+
+ 	document.getElementById('y').addEventListener('mousemove', function(e){
+ 		console.log(e);
+ 	});
+
+
+ 	function ii() {
+  	        if (win.getSelection) {//クロスブラウザ対応
+                selected_str = win.getSelection().toString();　//IE以外
+            } else {
+                selected_str = doc.selection.createRange().text; // IE
+            }
+
+            console.log(selected_str);		
+ 	}
+
+
+ 	win.addEventListener('mousewheel', function(){
+ 		console.log(5);
+ 	});
+
+
+</script>
+
+
+</div>

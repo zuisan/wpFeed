@@ -1,0 +1,59 @@
+<div id="timelineAdmin">
+
+
+	{% if rest.show == false %}
+		<p>restAPIが有効ではありません</p>
+	{% endif %}
+
+	{% if rest.base == false %}
+		<p>restAPIの名前を設定して下さい</p>
+	{% endif %}
+
+
+	{% if post %}
+		<p>設定を更新しました</p>
+	{% endif %}
+
+	<form action="{{url}}" method="post">
+		<input type="hidden" name="timeline_nonce" value="{{nonce}}">
+		<div>
+			<select name="timelinePostostType" id="timelinePostostType">
+				{% for value in postname %}
+	    			<option value="{{value.post_type}}" {% if  options.timelinePostostType == value.post_type %} selected{% endif %}>{{value.post_type}}</option>
+				{% endfor %}
+			</select>
+		</div>
+
+		<ul>
+			<li><input type="radio" name="customTag" value="0" {% if options.customTag == 0 %} checked{% endif %}>htmlタグ</li>
+			<li><input type="radio" name="customTag" value="1" {% if options.customTag == 1 %} checked{% endif %}>カスタムタグ</li>
+		</ul>
+
+
+		<p>サムネイル</p>
+		<ul>
+			<li><input type="radio" name="thumbnail" value="1" {% if options.thumbnail == 1 %} checked{% endif %}>あり</li>
+			<li><input type="radio" name="thumbnail" value="0" {% if options.thumbnail == 0 %} checked{% endif %}>なし</li>
+		</ul>
+
+		<div>
+			<select name="number" id="number">
+				{% for i in 1..10 %}
+				    <option value="{{ i }}" {% if options.number == i %} selected{% endif %}>{{ i }}</option>
+				{% endfor %}
+
+			</select>
+		</div>
+
+
+		<div>
+			<input type="text" name="string" value="{{options.string}}">
+		</div>
+
+
+		<div class="originalExcerpt"><input type="text" name="length" value="{{options.length}}"></div>
+
+
+		<button type="submit">送信</button>
+	</form>
+</div>

@@ -1,0 +1,15 @@
+{
+    "name": "zukeyamakazuaki/feed",
+    "require": {
+        "nesbot/carbon": "^1.22",
+        "respect/validation": "^1.1",
+        "cebe/markdown": "^1.1",
+        "phpoffice/phpexcel": "^1.8",
+        "phpoffice/phpspreadsheet": "1.0.0-beta"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core/"
+        }
+    }
+}

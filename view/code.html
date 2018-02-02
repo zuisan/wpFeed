@@ -1,0 +1,10 @@
+
+
+<div id="feedWrap">
+{% if option.customTag %}
+    <app post-type="{{option.timelinePostostType}}" num-count="{{option.number}}" like-str={{option.string}}></app>
+{% else %}
+    <div data-is='app' post-type="{{option.timelinePostostType}}" num-count="{{option.number}}" like-str={{option.string}}></div>
+{% endif %}	
+<p id="loding">ローディング...</p>	
+</div>
